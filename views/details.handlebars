@@ -1,0 +1,51 @@
+{{>header}}
+<div class="details content">
+      <h2>{{title}}</h2>
+      <h3> {{blog.title}} </h3>
+   <div class="content">
+      <p> {{blog.body}} </p>
+    </div>
+      
+<a class="delete" data-doc="{{blog._id}}">delete</a>
+      </div>
+      <script>
+          const trashcan = document.querySelector('a.delete');
+          trashcan.addEventListener('click', (e)=>{
+              const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method:'DELETE'
+            })
+            .then((response)=> response.json())
+            .then((data)=> window.location.href = data.redirect)
+            .catch((err)=>console.log(err));
+          })
+      </script>
+<style>
+  h2{
+    font-family: 'Padauk', sans-serif;
+    color:#393e46;
+  }
+  h3{
+    font-family: 'Padauk', sans-serif;
+    color:#393e46;
+  }
+  p{
+    font-family: 'Padauk', sans-serif;
+    color:#393e46;  
+    margin: 10px; 
+  }
+  .details{
+    margin: 5% 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .delete:hover{
+    background: #b9fffc;
+  }
+  .delete{
+     border: 1px solid #62cece;
+    padding: 5px 20px;
+  }
+</style>

@@ -1,0 +1,66 @@
+{{>header}}
+<main>
+<div class="create-blog content">
+ <form action="/blogs" method="POST">
+ <label for="title">Blog title:</label>
+ <input type="text" id="title" name="title" required>
+ <label for="snippet">Blog snippet:</label>
+ <input type="text" id="snippet" name="snippet" required>
+ <label for="body">Blog body:</label>
+ <textarea name="body" id="body" required></textarea>
+ <button>Submit</button>
+ </form>   
+</div>
+</main>
+<style>
+  form{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      line-height: 50px;
+      font-family: 'Padauk', sans-serif;
+      font-size: 18px;
+
+  }
+  textarea {
+      resize: none;
+      background: #fff;
+      color: #525865;
+      border-radius: 4px;
+      border: 1px solid #d1d1d1;
+      box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+    }
+  .create-blog{
+      margin:5% 0;
+      margin-bottom: 120px;
+  }
+  #title{
+      height: 30px;
+      width: 250px;
+}
+#snippet{
+    height: 30px;
+    width: 250px;
+}
+#body{
+    width: 250px;
+    height: 70px;
+}
+button{
+    height: 30px;
+    width: 70px;
+    margin: 10px;
+    background: #28abb9;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+input{
+    background: #fff;
+    color: #525865;
+    border-radius: 4px;
+    border: 1px solid #d1d1d1;
+    box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
+}
+</style>

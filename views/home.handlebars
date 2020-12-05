@@ -1,0 +1,39 @@
+    {{>header}}
+    <main>
+  <h1>{{title}}</h1>
+   
+     {{#each blogs}}
+     <a href="/blogs/{{this._id}}" class="single">
+      <h3> {{this.title}} </h3>
+      <p> {{this.snippet}} </p>
+      </a>
+     {{/each}}
+  
+</main>
+<style>
+  h1{
+    font-family: 'Padauk', sans-serif;
+    color:#393e46;
+  }
+  .single{
+    display: block;
+    border-left: 4px solid blue;
+    margin:20px 0;
+    height: 60px;
+    width: 300px;
+    border-bottom: 2px solid red;
+    text-decoration: none;
+    font-family: 'Padauk', sans-serif;
+    color:#393e46;
+  }
+  main{
+        margin: 5% 10%;
+  }
+  h3{
+        margin: 0 10px;
+  }
+  p{
+        margin: 0 10px; 
+  }
+</style>
+
